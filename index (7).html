@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>FalconLine - AI Discord Server Creator | Build Servers in Seconds</title>
+  <meta name="title" content="FalconLine - AI Discord Server Creator | Build Servers in Seconds" />
+  <meta name="description" content="FalconLine is an AI-powered Discord bot that creates fully organized Discord servers in seconds based on a user's description. Create roles, categories, and channels automatically." />
+  <meta name="keywords" content="FalconLine, Discord bot, AI Discord server creator, Discord server generator, Discord AI bot, Discord server template, NationServer" />
+  <meta name="author" content="NationServer" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#070a11" />
+  <link rel="canonical" href="https://falconline.app/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://cdn.corenexis.com/f/fTZpx02I5WU.png" />
+  <link rel="apple-touch-icon" href="https://cdn.corenexis.com/f/fTZpx02I5WU.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://falconline.app/" />
+  <meta property="og:title" content="FalconLine - AI Discord Server Creator" />
+  <meta property="og:description" content="Describe your ideal Discord server and FalconLine will automatically build it for you in 10 to 30 seconds." />
+  <meta property="og:image" content="https://cdn.corenexis.com/f/fTZpx02I5WU.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://falconline.app/" />
+  <meta property="twitter:title" content="FalconLine - AI Discord Server Creator" />
+  <meta property="twitter:description" content="Describe your ideal Discord server and FalconLine will automatically build it for you in 10 to 30 seconds." />
+  <meta property="twitter:image" content="https://cdn.corenexis.com/f/fTZpx02I5WU.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data (JSON-LD) for SEO & AdSense Eligibility -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FalconLine",
+    "operatingSystem": "Discord Platform",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "FalconLine is an AI-powered Discord bot that creates fully organized Discord servers in seconds based on a user's description.",
+    "author": {
+      "@type": "Person",
+      "name": "NationServer",
+      "url": "https://youtube.com/@nationserver"
+    }
+  }
+  </script>
+
+  <style>
+    /* CSS Custom Variables - Professional Polish Theme */
+    :root {
+      --bg-main: #050505;
+      --bg-card: rgba(18, 18, 22, 0.65);
+      --bg-card-hover: rgba(24, 24, 29, 0.85);
+      --bg-nav: rgba(9, 9, 11, 0.92);
+      --border-color: #27272a;
+      --border-accent: #3b82f6;
+      
+      --accent-blue: #2563eb;
+      --accent-blue-hover: #1d4ed8;
+      --accent-light: #3b82f6;
+      --accent-text: #60a5fa;
+      --accent-soft: rgba(37, 99, 235, 0.12);
+
+      --text-main: #ffffff;
+      --text-muted: #a1a1aa;
+      --text-subtle: #71717a;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+
+      --shadow-soft: 0 20px 30px -10px rgba(0, 0, 0, 0.8), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+      --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-family);
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-color: var(--bg-main);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    button, input, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    /* Layout Utility */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: 96px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 64px 0;
+      }
+    }
+
+    /* Typography Helpers - Professional Polish */
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background-color: rgba(39, 39, 42, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-pill);
+      color: #3b82f6;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Buttons - Professional Polish */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-blue-hover);
+      border-color: var(--accent-blue-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-secondary {
+      background-color: #18181b;
+      color: var(--text-main);
+      border-color: var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: #27272a;
+      border-color: #3f3f46;
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Navigation - Professional Polish */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--bg-nav);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .logo img {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+    }
+
+    .logo-badge {
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      background-color: var(--accent-blue);
+      color: #ffffff;
+      border-radius: 4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-light);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      background-color: #09090b;
+      border-bottom: 1px solid var(--border-color);
+      padding: 24px;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 999;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .mobile-menu .nav-link {
+      font-size: 1rem;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 900px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+    }
+
+    /* Hero Section - Professional Polish */
+    .hero {
+      padding: 110px 0 80px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: 3.75rem;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      color: var(--text-main);
+    }
+
+    .hero-title span {
+      color: #3b82f6;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 0 40px 0;
+      }
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-cta .btn {
+        width: 100%;
+      }
+    }
+
+    /* SPA Page Routing & Navigation */
+    .page-view {
+      display: none;
+    }
+
+    .page-view.active {
+      display: block;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #3b82f6;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: #60a5fa;
+      transform: translateX(-4px);
+    }
+
+    /* Features Grid - Professional Polish */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-card);
+    }
+
+    .feature-card:hover {
+      background-color: var(--bg-card-hover);
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .feature-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background-color: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3b82f6;
+      margin-bottom: 20px;
+    }
+
+    .feature-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Video Demo Section */
+    .video-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .video-responsive-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background-color: #000;
+      border: 1px solid var(--border-color);
+    }
+
+    .video-responsive-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* About Section */
+    .about-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .developer-box {
+      background-color: #050505;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .developer-box h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .developer-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .developer-info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .developer-info-item a {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+
+    .developer-info-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Form Section */
+    .contact-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background-color: #050505;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .form-status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      display: none;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .form-status.success {
+      display: block;
+      background-color: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    /* Privacy Policy Section */
+    .privacy-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .privacy-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 28px 0 12px 0;
+    }
+
+    .privacy-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .privacy-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .privacy-content ul {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .privacy-content li {
+      margin-bottom: 8px;
+    }
+
+    /* FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 24px;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      color: var(--accent-light);
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      background-color: #050505;
+      padding: 0 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 16px 24px 20px 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Footer - Professional Polish */
+    .footer {
+      background-color: #09090b;
+      border-top: 1px solid var(--border-color);
+      padding: 64px 0 32px 0;
+      margin-top: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 12px;
+      max-width: 320px;
+      line-height: 1.6;
+    }
+
+    .footer-col-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-subtle);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+    }
+
+    .footer-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-subtle);
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background-color: var(--accent-blue);
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-soft);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 900;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--accent-blue-hover);
+      transform: translateY(-3px);
+    }
+
+    /* Scroll Reveal Lightweight Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#top" class="logo" aria-label="FalconLine Home">
+        <img src="https://cdn.corenexis.com/f/fTZpx02I5WU.png" alt="FalconLine Logo" width="36" height="36" />
+        <span>FalconLine</span>
+        <span class="logo-badge">BOT</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#top" class="nav-link">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#demo" class="nav-link">Demo</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#privacy" class="nav-link">Privacy Policy</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://discord.com/oauth2/authorize?client_id=1521842307337424990&permissions=8&integration_type=0&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+          Invite FalconLine
+        </a>
+        <button class="mobile-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#top" class="nav-link mobile-link">Home</a>
+      <a href="#features" class="nav-link mobile-link">Features</a>
+      <a href="#demo" class="nav-link mobile-link">Demo</a>
+      <a href="#about" class="nav-link mobile-link">About</a>
+      <a href="#faq" class="nav-link mobile-link">FAQ</a>
+      <a href="#contact" class="nav-link mobile-link">Contact</a>
+      <a href="#privacy" class="nav-link mobile-link">Privacy Policy</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1521842307337424990&permissions=8&integration_type=0&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 12px;">
+        Invite FalconLine
+      </a>
+      <a href="https://discord.gg/VyYUtrQs4C" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        Join Community
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home Landing Page View -->
+    <div id="home-view" class="page-view active">
+      <!-- Hero Section -->
+      <section class="hero container">
+        <div class="reveal">
+          <div class="section-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 12L2.1 12.1"></path></svg>
+            Next-Gen AI Discord Automation
+          </div>
+          <h1 class="hero-title">Create Discord Servers in Seconds <span>with AI</span></h1>
+          <p class="hero-subtitle">Describe your ideal Discord server and FalconLine will automatically build it for you.</p>
+          
+          <div class="hero-cta">
+            <a href="https://discord.com/oauth2/authorize?client_id=1521842307337424990&permissions=8&integration_type=0&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+              Invite FalconLine
+            </a>
+            <a href="https://discord.gg/VyYUtrQs4C" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Join Community
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="section-padding container">
+        <div class="text-center reveal">
+          <div class="section-badge">Core Capabilities</div>
+          <h2 class="section-title">Everything You Need for Discord</h2>
+          <p class="section-subtitle mx-auto">FalconLine handles all the heavy lifting so you can focus on building and engaging your community.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3 class="feature-title">AI Server Creation</h3>
+            <p class="feature-desc">Describe your server vision in natural language. FalconLine parses your prompt and builds complete server architecture instantly.</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3 class="feature-title">Custom Roles</h3>
+            <p class="feature-desc">Generates role hierarchies, permissions, and color palettes automatically tailored for staff, VIPs, and members.</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="feature-title">Categories</h3>
+            <p class="feature-desc">Organizes information desks, community hubs, staff lounges, and gaming areas into tidy, structured categories.</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="feature-title">Text Channels</h3>
+            <p class="feature-desc">Creates announcement feeds, rule books, general chatrooms, and specialized discussion rooms with proper topic descriptions.</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+            </div>
+            <h3 class="feature-title">Voice Channels</h3>
+            <p class="feature-desc">Sets up low-latency voice lobbies, squad channels, private streaming rooms, and AFK lounges ready for instant voice calls.</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3 class="feature-title">Fast Setup</h3>
+            <p class="feature-desc">Go from an empty server to a fully configured community hub in 10 to 30 seconds with a single simple prompt command.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo Section -->
+      <section id="demo" class="section-padding container">
+        <div class="text-center reveal">
+          <div class="section-badge">Live Demonstration</div>
+          <h2 class="section-title">See FalconLine in Action</h2>
+          <p class="section-subtitle mx-auto">Watch this walkthrough video to see how FalconLine creates an entire Discord server in seconds.</p>
+        </div>
+
+        <div class="video-card reveal">
+          <div class="video-responsive-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ea3Vqq8NqqM?si=h7wxiCie6F_n9kku" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section-padding container">
+        <div class="about-card reveal">
+          <div class="about-grid">
+            <div class="about-text">
+              <div class="section-badge">About The Project</div>
+              <h2 class="section-title" style="font-size: 2rem;">Empowering Discord Communities</h2>
+              <p>FalconLine is an AI-powered Discord bot that creates fully organized Discord servers in seconds based on a user's description. It is designed to save time while helping communities launch quickly with professional server structures.</p>
+              <p>Whether you're starting a gaming squad, study group, tech community, or creator server, FalconLine converts your ideas into structured channels and role hierarchies automatically.</p>
+            </div>
+
+            <div class="developer-box">
+              <h4>Developer Information</h4>
+              <ul class="developer-info-list">
+                <li class="developer-info-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  <span>Developer: <strong>NationServer</strong></span>
+                </li>
+                <li class="developer-info-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                  <span>YouTube: <a href="https://youtube.com/@nationserver" target="_blank" rel="noopener noreferrer">@nationserver</a></span>
+                </li>
+                <li class="developer-info-item">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <span>Email: <a href="mailto:nationserver.yt@gmail.com">nationserver.yt@gmail.com</a></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="section-padding container">
+        <div class="text-center reveal">
+          <div class="section-badge">Got Questions?</div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle mx-auto">Find quick answers to common questions about FalconLine and how it works.</p>
+        </div>
+
+        <div class="faq-container reveal">
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              <span>Is FalconLine free?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, FalconLine is completely free to use. You can invite the bot to your Discord server and generate server structures without any hidden fees or subscriptions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How long does setup take?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Server setup takes anywhere from 10 to 30 seconds. FalconLine instantly generates categories, channels, and roles directly in your server in real time.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I customize the server after creation?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Once FalconLine builds your server, you retain 100% full administrator ownership. You can freely edit, rename, move, or add new channels, roles, and permissions as you like.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Does FalconLine need Administrator permission?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, Administrator permission is required so FalconLine has the necessary rights to create roles, channels, categories, and configure channel permission overrides automatically.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is my server data safe with FalconLine?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. FalconLine only requests permissions required for server creation and does not store or read your private text or voice communications.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section-padding container">
+        <div class="text-center reveal">
+          <div class="section-badge">Get In Touch</div>
+          <h2 class="section-title">Contact Support</h2>
+          <p class="section-subtitle mx-auto">Have questions, feedback, or need help with FalconLine? Fill out the form below to reach out to us directly.</p>
+        </div>
+
+        <div class="contact-wrapper reveal">
+          <form action="https://formsubmit.co/nationserver.yt@gmail.com" method="POST" id="contact-form">
+            <!-- FormSubmit Configuration Hidden Fields -->
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New Contact Form Submission - FalconLine" />
+            <input type="hidden" name="_template" value="table" />
+
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe" />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="name@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" required placeholder="How can we help?" />
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" rows="5" class="form-textarea" required placeholder="Write your message here..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit-btn">
+              Send Message
+            </button>
+
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!-- Dedicated Privacy Policy Page View -->
+    <div id="privacy-view" class="page-view" style="display: none;">
+      <section class="section-padding container">
+        <a href="#top" class="back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Home
+        </a>
+
+        <div class="text-center" style="margin-bottom: 40px;">
+          <div class="section-badge">Legal & Transparency</div>
+          <h1 class="section-title" style="font-size: 2.75rem;">Privacy Policy</h1>
+          <p class="section-subtitle mx-auto">We are committed to protecting your privacy and ensuring complete transparency regarding how data is handled.</p>
+        </div>
+
+        <div class="privacy-card privacy-content" style="max-width: 900px; margin: 0 auto;">
+          <h3>1. Information We Collect</h3>
+          <p>When you interact with the FalconLine website or use the FalconLine Discord bot, we collect minimal data required for operational functionality:</p>
+          <ul>
+            <li><strong>Prompt Inputs:</strong> Text prompts provided to the bot to generate server structures.</li>
+            <li><strong>Discord Identifiers:</strong> Discord User IDs and Guild (Server) IDs required to assign roles and channels.</li>
+            <li><strong>Contact Submissions:</strong> Information submitted voluntarily via our contact form (name, email address, message).</li>
+          </ul>
+
+          <h3>2. Cookies and Local Storage</h3>
+          <p>This website does not use tracking cookies or persistent advertising cookies. Standard browser local storage may be used strictly for remembering user interface preferences (such as mobile menu state).</p>
+
+          <h3>3. Analytics & Usage Metrics</h3>
+          <p>We may aggregate non-identifiable usage statistics to evaluate bot performance, monitor system latency, and improve AI server generation quality.</p>
+
+          <h3>4. Discord Data Usage</h3>
+          <p>FalconLine utilizes Discord API OAuth permissions strictly to execute requested administrative actions (creating channels, categories, and roles). FalconLine never reads, stores, or transmits private user messages or voice audio.</p>
+
+          <h3>5. Third-Party Services</h3>
+          <p>Our website utilizes trustworthy third-party services including:</p>
+          <ul>
+            <li><strong>FormSubmit:</strong> Used to securely process contact form inquiries.</li>
+            <li><strong>YouTube Embeds:</strong> Used for displaying video demonstrations.</li>
+            <li><strong>Discord API:</strong> Used for authenticating bot commands and creating server layouts.</li>
+          </ul>
+
+          <h3>6. Data Retention</h3>
+          <p>Operational generation logs are retained only temporarily for debugging and abuse prevention, after which they are permanently deleted.</p>
+
+          <h3>7. User Rights & Data Deletion</h3>
+          <p>You have the right to request access to or deletion of any data associated with your contact submissions or server interactions. To exercise your rights, please email us directly at <a href="mailto:nationserver.yt@gmail.com" style="color: #60a5fa; font-weight: 600;">nationserver.yt@gmail.com</a>.</p>
+
+          <h3>8. Security</h3>
+          <p>We implement industry-standard encryption protocols (HTTPS/SSL) and strict Discord API scope restrictions to ensure all interactions remain secure.</p>
+
+          <h3>9. Contact Information</h3>
+          <p>If you have any questions or concerns regarding this Privacy Policy, please contact developer NationServer at <a href="mailto:nationserver.yt@gmail.com" style="color: #60a5fa; font-weight: 600;">nationserver.yt@gmail.com</a>.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="#contact" class="btn btn-secondary">
+            Have Questions? Contact Support
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#top" class="logo">
+            <img src="https://cdn.corenexis.com/f/fTZpx02I5WU.png" alt="FalconLine Logo" width="32" height="32" />
+            <span>FalconLine</span>
+          </a>
+          <p>AI-powered Discord bot that creates fully organized Discord servers in seconds based on your description.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Developer Info</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Links & Actions</h4>
+          <div class="footer-actions">
+            <a href="https://discord.com/oauth2/authorize?client_id=1521842307337424990&permissions=8&integration_type=0&scope=bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              Invite FalconLine
+            </a>
+            <a href="https://discord.gg/VyYUtrQs4C" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              Join Discord
+            </a>
+            <a href="https://youtube.com/@nationserver" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright © 2026 FalconLine. Created by NationServer. All rights reserved.</div>
+        <div>
+          <a href="#privacy" style="margin-right: 16px;">Privacy Policy</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- All JavaScript inside <script> as required -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // SPA Page View Router
+      const homeView = document.getElementById('home-view');
+      const privacyView = document.getElementById('privacy-view');
+
+      function routeHandler() {
+        const hash = window.location.hash;
+        if (hash === '#privacy' || hash === '#privacy-view') {
+          if (homeView) homeView.style.display = 'none';
+          if (privacyView) {
+            privacyView.style.display = 'block';
+            privacyView.classList.add('active');
+          }
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          if (privacyView) privacyView.style.display = 'none';
+          if (homeView) {
+            homeView.style.display = 'block';
+            homeView.classList.add('active');
+          }
+          if (hash && hash !== '#top') {
+            const targetEl = document.querySelector(hash);
+            if (targetEl) {
+              setTimeout(() => {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+              }, 50);
+            }
+          } else if (hash === '#top') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }
+      }
+
+      window.addEventListener('hashchange', routeHandler);
+      routeHandler();
+
+      // Mobile Drawer Toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('active');
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+          });
+        });
+      }
+
+      // FAQ Accordion Toggle
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          const faqItem = question.parentElement;
+          const isOpen = faqItem.classList.contains('active');
+
+          // Close all FAQ items
+          document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+            const btn = item.querySelector('.faq-question');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          });
+
+          // Toggle current item
+          if (!isOpen) {
+            faqItem.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // Back to Top Button Visibility and Scroll
+      const backToTopBtn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+
+      // Scroll Reveal Animation via IntersectionObserver
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // Contact Form Enhancement
+      const contactForm = document.getElementById('contact-form');
+      const formStatus = document.getElementById('form-status');
+
+      if (contactForm && formStatus) {
+        contactForm.addEventListener('submit', function(e) {
+          // Allow default form submission to FormSubmit, but show instant positive feedback
+          formStatus.className = 'form-status success';
+          formStatus.textContent = 'Thank you! Your message is being sent to Nationserver...';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
